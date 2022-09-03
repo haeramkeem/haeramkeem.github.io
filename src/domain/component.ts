@@ -1,6 +1,8 @@
-import { st } from "state-types";
+import {
+    ComponentInterface,
+} from "state-types";
 
-export default class Component extends HTMLElement implements st.ComponentInterface{
+export default class Component extends HTMLElement implements ComponentInterface{
     constructor(option?: {
         subscribe: string
     }) {

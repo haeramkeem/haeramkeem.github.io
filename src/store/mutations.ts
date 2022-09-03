@@ -1,14 +1,10 @@
-import {st} from 'state-types';
+import * as st from "state-types";
 
 let mutations: st.mutations = {
-    assignNotes(notes, payload) {
-        notes = <st.note[]>payload;
-        return notes;
+    exampleMutation(data, payload) {
+        data = payload;
+        return data;
     },
-    addNotes(notes, payload) {
-        const result = notes.concat(payload);
-        return result;
-    }
 }
 
 export default mutations;

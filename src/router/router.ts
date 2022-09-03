@@ -1,4 +1,4 @@
-import { st } from "state-types";
+import { elementForm } from "state-types";
 import routes from "./routes";
 
 export default class Router {
@@ -11,7 +11,7 @@ export default class Router {
         };
     }
 
-    private render(el: st.elementForm) {
+    private render(el: elementForm) {
         if(el.component[0] === '/') {
             console.warn(`Invalid Router Path: ${el.component}`)
         } else {

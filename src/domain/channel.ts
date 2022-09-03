@@ -1,13 +1,17 @@
-import { st } from "state-types";
+import {
+    components,
+    ChannelInterface,
+    ComponentInterface,
+} from "state-types";
 
-export default class Channel implements st.ChannelInterface {
-    components: st.components;
+export default class Channel implements ChannelInterface {
+    components: components;
 
     constructor() {
         this.components = {};
     }
 
-    subscribe(eventName: string, component: st.ComponentInterface) {
+    subscribe(eventName: string, component: ComponentInterface) {
         if(!this.components.hasOwnProperty(eventName)) {
             this.components[eventName] = [];
         }
@@ -18,6 +22,6 @@ export default class Channel implements st.ChannelInterface {
         if(!this.components.hasOwnProperty(eventName)) {
             return [];
         }        
-        return this.components[eventName].map((component: st.ComponentInterface) => component.render());
+        return this.components[eventName].map((component: ComponentInterface) => component.render());
     }
 }

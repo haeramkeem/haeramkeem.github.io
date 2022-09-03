@@ -1,5 +1,5 @@
 import Channel from "../domain/channel";
-import {st} from 'state-types';
+import * as st from 'state-types';
 
 export default class Store implements st.StoreInterface {
     events: st.ChannelInterface;
@@ -19,10 +19,10 @@ export default class Store implements st.StoreInterface {
         this.mutations = params.mutations;
         let self = this;
         this.state = new Proxy(params.state, {
-            set: function(state: st.state, key, value: st.note[]) {
+            set: function(state: st.state, key, value: st.stateType[]) {
                 state[key.toString()] = value;
                 console.log(`[${new Date()}] State changed : ${key.toString()}`);
-                self.events.publish(`${key.toString()}Change`);
+                self.events.publish(`${key.toString()}`);
                 self.status = 'mutations';
                 return true;
             },

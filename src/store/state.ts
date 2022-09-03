@@ -1,8 +1,7 @@
-import { st } from "state-types"
+import * as st from "state-types"
 
 let state: st.state = {
-    "notes": [],
-    "flags": [],
+    "exampleState": [],
 }
 
 export default state;

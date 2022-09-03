@@ -18,4 +18,4 @@ InstallStore();
 //Start App
 document.getElementById('app')?.appendChild(
     document.createElement('main-app')
-)
+);
