@@ -1,7 +1,7 @@
 import * as st from "state-types"
 
 let state: st.state = {
-    "exampleState": [],
+    "works": [],
 }
 
 export default state;

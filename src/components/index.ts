@@ -1,5 +1,5 @@
-import ExampleComponent from './ExampleComponent';
+import WorkThumbnail from './WorkThumbnail';
 
 export default function InstallComponents() {
-    customElements.define('example-component', ExampleComponent);
+    customElements.define('work-thumbnail', WorkThumbnail);
 }

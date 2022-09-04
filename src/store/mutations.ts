@@ -1,7 +1,7 @@
 import * as st from "state-types";
 
 let mutations: st.mutations = {
-    exampleMutation(data, payload) {
+    overwrite(data, payload) {
         data = payload;
         return data;
     },
