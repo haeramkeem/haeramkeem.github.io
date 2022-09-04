@@ -1,0 +1,18 @@
+apiVersion: saltwalks.github.io/work
+kind: project
+metadata:
+  name: Injik
+  label: "Graduation project"
+spec:
+  description:
+    short: "Blockchain-reliable employment platform"
+    full: ""
+  bannerImage: "https://raw.githubusercontent.com/CNU-DDE/injik/main/docs/images/Banner.png"
+  gitRepository: "https://github.com/CNU-DDE"
+  date:
+    from: 2022-03
+    to: present
+  detail:
+    images: []
+status:
+  enum: running

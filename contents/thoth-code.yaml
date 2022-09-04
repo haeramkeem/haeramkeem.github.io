@@ -1,0 +1,18 @@
+apiVersion: saltwalks.github.io/work
+kind: project
+metadata:
+  name: Thoth-code
+  label: ""
+spec:
+  description:
+    short: "The pyramid of open knowledge"
+    full: ""
+  bannerImage: "https://raw.githubusercontent.com/thoth-code/thoth-code.github.io/main/docs/images/Banner.png"
+  gitRepository: "https://github.com/thoth-code"
+  date:
+    from: 2021-03
+    to: present
+  detail:
+    images: []
+status:
+  enum: running

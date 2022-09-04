@@ -1,0 +1,18 @@
+apiVersion: saltwalks.github.io/work
+kind: project
+metadata:
+  name: 'string'
+  label: 'string'
+spec:
+  description:
+    short: 'string'
+    full: 'string'
+  bannerImage: 'string{URL}'
+  gitRepository: 'string{URL}'
+  date:
+    from: 'string{YYYY-MM}'
+    to: 'string{YYYY-MM|"present"}'
+  detail:
+    images: '[]string{URL}'
+status:
+  enum: 'string{running, pending, ended}'
