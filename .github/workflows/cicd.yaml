@@ -25,7 +25,7 @@ jobs:
       - run: npm ci
       # Step2: Build
       - name: Build HTML
-        run: npm run predeploy
+        run: npm run build
       - name: Build JSON
         uses: stefanprodan/kube-tools@v1
         with:

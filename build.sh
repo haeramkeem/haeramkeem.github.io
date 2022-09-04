@@ -4,7 +4,7 @@ set -e
 
 # Envs
 SOURCE_DIR=contents
-OUTPUT_DIR=dist
+OUTPUT_DIR=dist/api
 OUTPUT=$OUTPUT_DIR/works
 
 # Generate file
