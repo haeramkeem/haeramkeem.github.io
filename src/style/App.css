@@ -1,7 +1,7 @@
 * {
-    padding: 0;
     margin: 0;
-    font-family: 'Antic Slab', 'Poor Story', serif;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -9,7 +9,8 @@ html {
 }
 
 body {
-    position: relative;
+    background-color: #000030;
+    height: 100vh;
 }
 
 input, textarea, button {
@@ -22,4 +23,166 @@ input, textarea, button {
     height: 100%;
     width: 100%;
     background: none
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ------------------------------------ GLOBAL CLASS -------------------------------------- */
+
+.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.move-forward {
+    z-index: 1;
+}
+
+.one-page {
+    height: calc(100vh - 30px);
+    overflow: hidden;
+}
+
+/* ------------------------------------ FONTS -------------------------------------- */
+
+.font-coming-soon {
+    font-family: 'Coming Soon', cursive;
+}
+
+.font-luckiest-guy {
+    font-family: 'Luckiest Guy', cursive;
+}
+
+/* ----------------------------------------- HEADER ------------------------------------------ */
+
+header {
+    position: fixed;
+    width: 100%;
+    height: 64px;
+    color: white;
+    z-index: 2;
+    padding: 0px 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header>h1 {
+    padding: 15px 0px;
+    font-family: 'Bangers', cursive;
+}
+
+nav {
+    padding: 22px 0px;
+}
+
+nav>a {
+    margin-left: 10px;
+    font-family: 'Contrail One', cursive;
+}
+
+/* ----------------------------------------- MAIN ------------------------------------------ */
+#page-view {
+    padding-top: 64px;
+    min-height: 100vh;
+}
+
+#slide-list img {
+    display: table;
+    float: left;
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+}
+
+#logo {
+    position: absolute;
+    display: block;
+    height: 600px;
+    width: 600px;
+    margin: -300px 0 0 -300px;
+    background: url(images/logo.png) no-repeat;
+    background-size: cover;
+    clip-path: circle(50% at 50% 50%);
+}
+
+#scroll-down {
+    font-size: 20px;
+    color: #71797E;
+    mix-blend-mode: difference;
+    margin-left: -72.5px;
+    top: calc(100% - 50px);
+}
+
+/* ------------------------------------------ MAIN ---------------------------------------------- */
+
+#music {
+    margin: 15px 0px;
+}
+
+.project-banner {
+    padding: 15px 30px;
+}
+
+.index {
+    font-size: 150px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.project-github-link {
+    display: block;
+    text-decoration: none;
+}
+
+.project-github-link h3 {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0);
+}
+
+.project-github-link img {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* ------------------------------------------ FOOTER ---------------------------------------------- */
+footer {
+    margin-top: 100px;
+}
+
+#copyright-box {
+    color: white;
+    background-color: #000060;
+    font-family: 'Sriracha', cursive;
+    font-size: 7.3vw;
+    text-align: center;
+}
+
+#contact-box {
+    padding: 30px 10%;
+    background-color: #000090;
+    font-family: 'Lily Script One', cursive;
+    font-size: 4vw;
+    color: white;
+}
+
+#contact-box>a {
+    display: inline-block;
+    text-decoration: underline;
+}
+
+#github {
+    width: calc(30% - 10px);
+}
+
+#email {
+    width: calc(70% - 10px);
+    cursor: pointer;
 }
