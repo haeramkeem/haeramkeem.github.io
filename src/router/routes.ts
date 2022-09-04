@@ -7,27 +7,31 @@ export default function routes(path: string): elementForm {
          */
         case '/' :
         return {
-            component: 'example-page',
-            attributes: [
-                {
-                    name: "class",
-                    value: "example-attr",
-                },
-            ],
+            component: 'home-page',
+            attributes: [],
         };
-        default :
+        case '/about' :
+        return {
+            component: 'about-page',
+            attributes: [],
+        };
+        case '/contact' :
+        return {
+            component: 'contact-page',
+            attributes: [],
+        };
+        case '/works' :
+        return {
+            component: 'works-page',
+            attributes: [],
+        };
+        //default :
         /**
          * DYNAMIC ROUTES
          */
-        if(/\/dynamic-.*/.test(path)) {
-            return {
-                component: 'example-page',
-                attributes: [],
-            };
-         }
     }
     return {
-        component: 'example-page',
+        component: 'home-page',
         attributes: [],
     };
 }

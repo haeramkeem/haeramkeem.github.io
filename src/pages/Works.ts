@@ -1,6 +1,6 @@
 import Component from "../domain/component";
 
-export default class ExamplePage extends Component {
+export default class WorksPage extends Component {
     constructor() {
         super();
     }

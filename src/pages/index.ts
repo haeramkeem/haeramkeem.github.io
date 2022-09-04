@@ -1,7 +1,13 @@
 import MainApp from '../App';
-import ExamplePage from './ExamplePage';
+import AboutPage from './About';
+import ContactPage from './Contact';
+import HomePage from './Home';
+import WorksPage from './Works';
 
 export default function InstallPages() {
     customElements.define('main-app', MainApp);
-    customElements.define('example-page', ExamplePage);
+    customElements.define('about-page', AboutPage);
+    customElements.define('contact-page', ContactPage);
+    customElements.define('home-page', HomePage);
+    customElements.define('works-page', WorksPage);
 }
