@@ -17,7 +17,7 @@ export default class MainApp extends Component {
         </header>
         <main id="page-view"></main>
         <footer>
-            <div id="copyright-box">©SalWalks/Coworking 2022</div>
+            <div id="copyright-box">©SaltWalks/Coworking2020-2022</div>
             <div id="contact-box">
                 <h2>Contact</h2>
                 <a id="github" href="https://github.com/saltwalks">GitHuub</a>
