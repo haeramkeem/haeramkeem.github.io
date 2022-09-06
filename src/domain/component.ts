@@ -20,7 +20,10 @@ export default class Component extends HTMLElement implements ComponentInterface
         this.propsHandler(props);
         this.dispatch();
         this.listeners.forEach(listener => {
-            this.querySelector(listener.query)?.addEventListener(listener.eventName, listener.eventListener);
+            const target = listener.query === "self"
+                ? this
+                : this.querySelector(listener.query) as HTMLElement;
+            target.addEventListener(listener.eventName, listener.eventListener);
         });
     }
 
