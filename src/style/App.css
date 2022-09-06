@@ -72,15 +72,11 @@ header {
     padding: 0px 40px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 header>h1 {
-    padding: 15px 0px;
     font-family: 'Bangers', cursive;
-}
-
-nav {
-    padding: 22px 0px;
 }
 
 nav>a {
@@ -120,8 +116,6 @@ nav>a {
     margin-left: -72.5px;
     top: calc(100% - 50px);
 }
-
-/* ------------------------------------------ MAIN ---------------------------------------------- */
 
 #music {
     margin: 15px 0px;
