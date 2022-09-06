@@ -90,6 +90,35 @@ nav>a {
     min-height: 100vh;
 }
 
+#running-projects {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* ----------------------------------------- WORK-THUMBNAIL ------------------------------------------ */
+
+#running-projects>work-thumbnail {
+    width: 50%;
+    flex-basis: 50%;
+}
+
+work-thumbnail>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+work-thumbnail>div.wt-hover {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: calc(-100% - 4px);
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* ----------------------------------------- MAIN (LEGACY) ------------------------------------------ */
+
 #slide-list img {
     display: table;
     float: left;
@@ -147,10 +176,6 @@ nav>a {
 }
 
 /* ------------------------------------------ FOOTER ---------------------------------------------- */
-footer {
-    margin-top: 100px;
-}
-
 #copyright-box {
     color: white;
     background-color: #000060;

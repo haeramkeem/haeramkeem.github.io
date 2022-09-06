@@ -30,8 +30,9 @@ export default class HomePage extends Component {
             <a href="/" class="center move-forward" id="logo"><h1>Salt Walks</h1></a>
         </div>
         ${musicPlayerEmbed}
-        <div>
-            ${running}
+        <h2>Ongoing Projects</h2>
+        <div id="running-projects">
+        ${running}
         </div>
         `;
     }
