@@ -17,12 +17,17 @@ declare module 'state-types' {
 
     export interface ComponentInterface {
         get template(): string;
+        get listeners(): EventListenerInterface[];
         connectedCallback: () => void;
         render: () => void;
         dispatch: () => void;
-        addEvents: () => void;
-        addStyles: () => void;
         propsHandler: (props: string) => void;
+    }
+
+    export interface EventListenerInterface {
+        query: string;
+        eventName: string;
+        eventListener: (event: Event) => void;
     }
 
     export type stateType = object | object[];

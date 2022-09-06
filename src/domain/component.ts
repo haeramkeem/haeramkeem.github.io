@@ -1,4 +1,5 @@
 import {
+    EventListenerInterface,
     ComponentInterface,
 } from "state-types";
 
@@ -18,16 +19,16 @@ export default class Component extends HTMLElement implements ComponentInterface
         this.innerHTML = this.template;
         this.propsHandler(props);
         this.dispatch();
-        this.addStyles();
-        this.addEvents();
+        this.listeners.forEach(listener => {
+            this.querySelector(listener.query)?.addEventListener(listener.eventName, listener.eventListener);
+        });
     }
 
     // Child-define methods
-    get template() { return ''; }
+    get template(): string { return ''; }
+    get listeners(): EventListenerInterface[] { return []; }
 
     render() {}
     dispatch() {}
-    addStyles() {}
-    addEvents() {}
     propsHandler(props: string) {}
 }
