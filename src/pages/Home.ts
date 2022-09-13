@@ -31,7 +31,7 @@ export default class HomePage extends Component {
 
         runningProjects.forEach((prj, idx) => {
             slideList.innerHTML += `
-                <work-thumbnail index=${idx}></work-thumbnail>
+                <work-thumbnail index=${idx} hovering="disable"></work-thumbnail>
             `;
         });
 
