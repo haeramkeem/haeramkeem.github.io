@@ -26,8 +26,4 @@ export default class MainApp extends Component {
         </footer>
         `;
     }
-
-    dispatch() {
-        window.$store.dispatch('getWorks');
-    }
 }
