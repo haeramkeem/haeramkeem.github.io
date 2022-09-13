@@ -12,25 +12,37 @@ export default class HomePage extends Component {
         return `
         <div class="one-page">
             <div id="slide-list">
-                <img src="main.jpg" alt="Main image">
+                <img src="Banner1.png" alt="Main image">
             </div>
-            <a href="/" class="center move-forward" id="logo"><h1>Salt Walks</h1></a>
         </div>
         <music-player></music-player>
-        <h2>Ongoing Projects</h2>
-        <div id="running-projects">
-        </div>
         `;
     }
 
+    dispatch() {
+        window.$store.dispatch('getWorks');
+    }
+
     render() {
-        const runningProjects = this.querySelector("#running-projects") as HTMLElement;
-        (window.$store.state['works'] as Project[]).forEach((prj, idx) => {
-            if (prj.status.enum === "running") {
-                runningProjects.innerHTML += `
-                    <work-thumbnail index=${idx}></work-thumbnail>
-                `;
-            }
+        const slideList = this.querySelector("#slide-list") as HTMLElement;
+
+        const runningProjects = (window.$store.state['works'] as Project[])
+            .filter(prj => prj.status.enum === "running");
+
+        runningProjects.forEach((prj, idx) => {
+            slideList.innerHTML += `
+                <work-thumbnail index=${idx}></work-thumbnail>
+            `;
         });
+
+        const imageNum = runningProjects.length + 1;
+        slideList.style.width = window.innerWidth * imageNum + "px";
+
+        let cnt = 0;
+        setInterval(() => {
+            slideList.style.transition = "500ms";
+            cnt = cnt < imageNum - 1 ? cnt + 1 : 0;
+            slideList.style.transform = `translateX(-${window.innerWidth * cnt}px)`;
+        }, 5000);
     }
 }

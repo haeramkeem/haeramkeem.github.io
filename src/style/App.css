@@ -35,17 +35,6 @@ a:hover {
 }
 
 /* ------------------------------------ GLOBAL CLASS -------------------------------------- */
-
-.center {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-}
-
-.move-forward {
-    z-index: 1;
-}
-
 .one-page {
     height: calc(100vh - 30px);
     overflow: hidden;
@@ -67,7 +56,8 @@ header {
     position: fixed;
     width: 100%;
     height: 64px;
-    color: white;
+    mix-blend-mode: difference;
+    /* color: white; */
     z-index: 2;
     padding: 0px 40px;
     display: flex;
@@ -90,18 +80,18 @@ nav>a {
     min-height: 100vh;
 }
 
-#running-projects {
-    display: flex;
-    flex-wrap: wrap;
+#slide-list>* {
+    display: table;
+    float: left;
+    height: 100vh;
+    width: 100vw;
+}
+
+#slide-list>img {
+    object-fit: cover;
 }
 
 /* ----------------------------------------- WORK-THUMBNAIL ------------------------------------------ */
-
-#running-projects>work-thumbnail {
-    width: 50%;
-    flex-basis: 50%;
-}
-
 work-thumbnail>img {
     width: 100%;
     height: 100%;
@@ -115,64 +105,6 @@ work-thumbnail>div.wt-hover {
     top: calc(-100% - 4px);
     visibility: hidden;
     background-color: rgba(0, 0, 0, 0.5);
-}
-
-/* ----------------------------------------- MAIN (LEGACY) ------------------------------------------ */
-
-#slide-list img {
-    display: table;
-    float: left;
-    height: 100vh;
-    width: 100vw;
-    object-fit: cover;
-}
-
-#logo {
-    position: absolute;
-    display: block;
-    height: 600px;
-    width: 600px;
-    margin: -300px 0 0 -300px;
-    background: url(images/logo.png) no-repeat;
-    background-size: cover;
-    clip-path: circle(50% at 50% 50%);
-}
-
-#scroll-down {
-    font-size: 20px;
-    color: #71797E;
-    mix-blend-mode: difference;
-    margin-left: -72.5px;
-    top: calc(100% - 50px);
-}
-
-#music {
-    margin: 15px 0px;
-}
-
-.project-banner {
-    padding: 15px 30px;
-}
-
-.index {
-    font-size: 150px;
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-.project-github-link {
-    display: block;
-    text-decoration: none;
-}
-
-.project-github-link h3 {
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0);
-}
-
-.project-github-link img {
-    width: 100%;
-    object-fit: cover;
 }
 
 /* ------------------------------------------ FOOTER ---------------------------------------------- */
