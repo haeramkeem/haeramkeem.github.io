@@ -4,7 +4,7 @@ declare module 'state-types' {
         subscribe: (eventName: string, component: ComponentInterface) => number;
         publish: (eventName: string) => void[];
     }
-    
+
     export interface StoreInterface {
         events: ChannelInterface;
         actions: actions;
@@ -21,7 +21,6 @@ declare module 'state-types' {
         connectedCallback: () => void;
         render: () => void;
         dispatch: () => void;
-        propsHandler: (props: string) => void;
     }
 
     export interface EventListenerInterface {

@@ -15,23 +15,24 @@ export default class Component extends HTMLElement implements ComponentInterface
 
     // Pre-defined methods
     connectedCallback() {
-        const props = this.innerHTML;
-        this.innerHTML = this.template;
-        this.propsHandler(props);
+        this.innerHTML = this.template || this.innerHTML;
+
         this.dispatch();
+
         this.listeners.forEach(listener => {
-            const target = listener.query === "self"
-                ? this
-                : this.querySelector(listener.query) as HTMLElement;
-            target.addEventListener(listener.eventName, listener.eventListener);
+            this.select(listener.query).addEventListener(listener.eventName, listener.eventListener);
         });
+
+    }
+
+    select(query: string): HTMLElement {
+        return (query === "self" ? this : this.querySelector(query)) as HTMLElement;
     }
 
     // Child-define methods
-    get template(): string { return ''; }
+    get template(): string { return ""; }
     get listeners(): EventListenerInterface[] { return []; }
 
     render() {}
     dispatch() {}
-    propsHandler(props: string) {}
 }

@@ -10,13 +10,14 @@ export default class MainApp extends Component {
         <header>
             <h1><a href="/">SaltWalks</a></h1>
             <nav>
-                <a href="/works">WORKS</a>
-                <a href="/about">ABOUT</a>
-                <a href="/contact">CONTACT</a>
+                <go-to href="/works">WORKS</go-to>
+                <go-to href="/about">ABOUT</go-to>
+                <go-to href="/contact">CONTACT</go-to>
             </nav>
         </header>
         <main id="page-view"></main>
         <footer>
+            <music-player></music-player>
             <div id="copyright-box">©SaltWalks/Coworking2020-2022</div>
             <div id="contact-box">
                 <h2>Contact</h2>
@@ -25,5 +26,9 @@ export default class MainApp extends Component {
             </div>
         </footer>
         `;
+    }
+
+    dispatch() {
+        window.$store.dispatch('getWorks');
     }
 }

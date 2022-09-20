@@ -10,7 +10,7 @@ html {
 
 body {
     background-color: #000030;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 input, textarea, button {
@@ -25,18 +25,20 @@ input, textarea, button {
     background: none
 }
 
-a {
+a, go-to {
     color: white;
     text-decoration: none;
+    cursor: pointer;
 }
 
-a:hover {
+a:hover, go-to:hover {
     text-decoration: underline;
 }
 
 /* ------------------------------------ GLOBAL CLASS -------------------------------------- */
 .one-page {
-    height: calc(100vh - 30px);
+    width: 100%;
+    height: calc(100vw * 0.6);
     overflow: hidden;
 }
 
@@ -57,8 +59,7 @@ header {
     width: 100%;
     height: 64px;
     mix-blend-mode: difference;
-    /* color: white; */
-    z-index: 2;
+    z-index: 1;
     padding: 0px 40px;
     display: flex;
     justify-content: space-between;
@@ -69,21 +70,19 @@ header>h1 {
     font-family: 'Bangers', cursive;
 }
 
-nav>a {
+nav>go-to {
     margin-left: 10px;
     font-family: 'Contrail One', cursive;
 }
 
 /* ----------------------------------------- MAIN ------------------------------------------ */
-#page-view {
-    padding-top: 64px;
-    min-height: 100vh;
+#slide-list,
+#slide-list>* {
+    height: 100%;
 }
 
 #slide-list>* {
-    display: table;
     float: left;
-    height: 100vh;
     width: 100vw;
 }
 
@@ -92,25 +91,84 @@ nav>a {
 }
 
 /* ----------------------------------------- WORK-THUMBNAIL ------------------------------------------ */
-work-thumbnail>img {
+work-thumbnail {
+    cursor: pointer;
+}
+
+.wt-top,
+.wt-bottom,
+.wt-bottom>img {
     width: 100%;
     height: 100%;
+}
+
+.wt-bottom>img {
     object-fit: cover;
 }
 
-work-thumbnail>div.wt-hover {
-    width: 100%;
-    height: 100%;
+.wt-top {
     position: relative;
-    top: calc(-100% - 4px);
-    visibility: hidden;
+    top: -100%;
     background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+/* ------------------------------------------ DETAIL ---------------------------------------------- */
+detail-page {
+    display: block;
+    padding: 64px 40px 8px 40px;
+    color: white;
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+detail-page>h2 {
+    font-size: 64px;
+    font-weight: 500;
+}
+
+detail-page>h3 {
+    font-size: 32px;
+    font-weight: 100;
+    font-style: italic;
+}
+
+detail-page>img {
+    width: 100%;
+}
+
+.dp-wrapper {
+    padding: 16px 0px;
+    display: flex;
+}
+
+.dp-description {
+    width: 70%;
+    padding-right: 16px;
+}
+.dp-links {
+    width: 30%;
+}
+
+.dp-wrapper h4 {
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.dp-description>p,
+.dp-links>a {
+    font-weight: 100;
 }
 
 /* ------------------------------------------ FOOTER ---------------------------------------------- */
+music-player {
+    display: block;
+    padding: 10px 40px;
+    background-color: #000060;
+}
+
 #copyright-box {
     color: white;
-    background-color: #000060;
+    background-color: #000090;
     font-family: 'Sriracha', cursive;
     font-size: 6vw;
     text-align: center;
@@ -118,7 +176,7 @@ work-thumbnail>div.wt-hover {
 
 #contact-box {
     padding: 30px 10%;
-    background-color: #000090;
+    background-color: #0000c0;
     font-family: 'Lily Script One', cursive;
     font-size: 4vw;
     color: white;

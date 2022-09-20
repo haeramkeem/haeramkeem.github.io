@@ -3,7 +3,7 @@ import Project from "../domain/project";
 
 export default class WorkThumbnail extends Component {
     project: Project;
-    hovering: boolean;
+    overlap: string;
 
     constructor() {
         super();
@@ -11,13 +11,19 @@ export default class WorkThumbnail extends Component {
         const idx = parseInt(this.getAttribute("index") as string);
         this.project = (window.$store.state["works"] as Project[])[idx];
 
-        this.hovering = this.getAttribute("hovering") === "enable";
+        // `disable`: (Default) Disable overlapping
+        // `hover`: Enable overlapping when hovering event occured
+        // `always`: Always overlap
+        this.overlap = this.getAttribute("overlap") || "disable";
     }
 
     get template() {
+        const visibility = this.overlap === "always" ? "visible" : "hidden";
         return `
-            <img src="${this.project.spec.bannerImage}" alt=""></img>
-            <div class="wt-hover">
+        <div class="wt-bottom">
+                <img src="${this.project.spec.images.banner}"></img>
+            </div>
+            <div class="wt-top" style="visibility:${visibility};">
                 <h2>${this.project.metadata.name}</h2>
                 <p>${this.project.spec.description.short}</p>
             </div>
@@ -25,10 +31,20 @@ export default class WorkThumbnail extends Component {
     }
 
     get listeners() {
-        const hoverBox = this.querySelector(".wt-hover") as HTMLElement;
+        const hoverBox = this.select(".wt-bottom");
+        const events = [
+            {
+                query: "self",
+                eventName: "click",
+                eventListener: (event: Event) => {
+                    event.preventDefault();
+                    window.$router.push(`/works/${this.project.metadata.urlEscape}`);
+                }
+            }
+        ];
 
-        if (this.hovering) {
-            return [
+        if (hoverBox && this.overlap === "hover") {
+            events.push(
                 {
                     query: "self",
                     eventName: "pointerenter",
@@ -43,9 +59,9 @@ export default class WorkThumbnail extends Component {
                         hoverBox.style.visibility = "hidden";
                     },
                 }
-            ];
-        } else {
-            return [];
+            );
         }
+
+        return events;
     }
 }

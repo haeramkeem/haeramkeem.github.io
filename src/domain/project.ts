@@ -2,20 +2,24 @@ export default interface Project {
     metadata: {
         name: string,
         label: string,
+        urlEscape: string,
     };
     spec: {
         description: {
             short: string,
             full: string,
         },
-        bannerImage: string,
-        gitRepository: string,
+        images: {
+            banner: string,
+            additional: string[],
+        },
+        urls: {
+            gitRepository: string,
+            additional: string[],
+        }
         date: {
             from: string,
             to: string,
-        },
-        detail: {
-            images: string[],
         },
     };
     status: {

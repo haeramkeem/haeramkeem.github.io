@@ -3,16 +3,19 @@ kind: project
 metadata:
   name: Injik
   label: "Graduation project"
+  urlEscape: "injik"
 spec:
   description:
     short: "Blockchain-reliable employment platform"
-    full: ""
-  bannerImage: "https://raw.githubusercontent.com/CNU-DDE/injik/main/docs/images/Banner.png"
-  gitRepository: "https://github.com/CNU-DDE"
+    full: "Tired of lies and false-resumes? Injik is an anti-counterfeiting employment platform guarenteed by the Blockchain technology."
+  images:
+    banner: "https://raw.githubusercontent.com/CNU-DDE/injik/main/docs/images/Banner.png"
+    additional: []
+  urls:
+    gitRepository: "https://github.com/CNU-DDE"
+    additional: []
   date:
     from: 2022-03
     to: present
-  detail:
-    images: []
 status:
   enum: running

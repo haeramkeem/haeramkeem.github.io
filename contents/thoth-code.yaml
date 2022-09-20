@@ -3,16 +3,19 @@ kind: project
 metadata:
   name: Thoth-code
   label: ""
+  urlEscape: "thoth-code"
 spec:
   description:
     short: "The pyramid of open knowledge"
-    full: ""
-  bannerImage: "https://raw.githubusercontent.com/thoth-code/thoth-code.github.io/main/docs/images/Banner.png"
-  gitRepository: "https://github.com/thoth-code"
+    full: "This is something like GitHub Gist, but it's cooler than that! Thoth provides features like saving, sharing, and organizing your code snippets to help you remember forgotten code usage."
+  images:
+    banner: "https://raw.githubusercontent.com/thoth-code/thoth-code.github.io/main/docs/images/Banner.png"
+    additional: []
+  urls:
+    gitRepository: "https://github.com/thoth-code"
+    additional: []
   date:
     from: 2021-03
     to: present
-  detail:
-    images: []
 status:
   enum: running

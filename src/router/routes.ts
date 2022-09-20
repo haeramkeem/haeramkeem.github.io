@@ -2,7 +2,7 @@ import { elementForm } from "state-types";
 
 export default function routes(path: string): elementForm {
     switch(path) {
-        /** 
+        /**
          * STATIC ROUTES
          */
         case '/' :
@@ -25,11 +25,17 @@ export default function routes(path: string): elementForm {
             component: 'works-page',
             attributes: [],
         };
-        //default :
-        /**
-         * DYNAMIC ROUTES
-         */
     }
+    /**
+     * DYNAMIC ROUTES
+     */
+    if(/\/works\/.*/.test(path)) {
+        return {
+            component: 'detail-page',
+            attributes: [],
+        };
+    }
+
     return {
         component: 'home-page',
         attributes: [],
