@@ -18,7 +18,7 @@ export default class HomePage extends Component {
         return `
         <div class="one-page">
             <div id="slide-list">
-                <img src="Banner1.png" alt="Main image">
+                <img src="prerelease.png" alt="Main image">
             </div>
         </div>
         `;
@@ -30,7 +30,7 @@ export default class HomePage extends Component {
 
     render() {
         /**
-         * DISCLAIMER
+         * TODO
          * This code must be moved to independent component `slide-list`
          * instead of integrated in page `Home`.
          */
@@ -58,7 +58,7 @@ export default class HomePage extends Component {
 
     get listeners() {
         /**
-         * DISCLAIMER
+         * TODO
          * This code must be moved to independent component `slide-list`
          * instead of integrated in page `Home`.
          */
