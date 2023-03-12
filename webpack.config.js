@@ -38,7 +38,7 @@ const config = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            favicon: resolve(__dirname, 'static/favicon.ico'),
+            // favicon: resolve(__dirname, 'static/favicon.ico'),
             template: resolve(__dirname, 'static/index.html'),
         }),
         new CleanWebpackPlugin(),

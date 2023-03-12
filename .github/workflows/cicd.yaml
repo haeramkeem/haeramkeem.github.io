@@ -1,14 +1,14 @@
-name: Deploy to github pages
+name: Build & deploy to GitHub pages
+
 on:
   push:
     branches:
       - main
-  workflow_dispatch:
+
 jobs:
-  deploy:
+  cicd:
     runs-on: ubuntu-latest
     steps:
-      # Step1: Setup
       - name: Checkout
         uses: actions/checkout@v3.0.1
       - name: Setup Node.js environment
@@ -23,14 +23,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       - run: npm ci
-      # Step2: Build
-      - name: Build HTML
-        run: npm run build
-      - name: Build JSON
-        uses: stefanprodan/kube-tools@v1
-        with:
-          command: ./build.sh
-      # Step3: Deploy
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
