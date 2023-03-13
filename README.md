@@ -1,3 +1,3 @@
-1. [MAYBE](https://haeramk.im)
-2. [ZERO-PLAN IS](https://haeramk.im)
-3. [THE BEST PLAN](https://haeramk.im)
+1. [MAYBE](https://www.haeramk.im)
+2. [ZERO-PLAN IS](https://www.haeramk.im)
+3. [THE BEST PLAN](https://www.haeramk.im)
